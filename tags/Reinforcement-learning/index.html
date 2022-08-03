@@ -1,0 +1,744 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Tag: Reinforcement learning, YangTMBlog">
+    <meta name="description" content="YangTMBlog">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>Tag: Reinforcement learning | YangTMBlog</title>
+    <link rel="icon" type="image/png" href="../../me.png">
+
+    <link rel="stylesheet" type="text/css" href="../../libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../../css/my.css">
+
+    <script src="../../libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="../../index.html" class="waves-effect waves-light">
+                    
+                    <img src="../../medias/me.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">YangTMBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="../../index.html" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a target="_blank" rel="noopener" href="https://github.com/yangtiming" class="waves-effect waves-light">
+      
+      <i class="fab fa-github-alt" style="zoom: 0.6;"></i>
+      
+      <span>GITHUB</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="../../medias/me.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">YangTMBlog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="../../index.html" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a target="_blank" rel="noopener" href="https://github.com/yangtiming" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-github-alt"></i>
+			
+			GITHUB
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                Yang Timing
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="../../libs/typed/typed.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "Dalian University of Technology-Electronic Information Engineering",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 50,
+                        loop: false,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "../../medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+
+
+    </div>
+</div>
+
+<main class="content">
+
+    
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;Post Tags
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="../Deep-Leaning/" title="Deep Leaning: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Deep Leaning" style="background-color: #F9EBEA;">Deep Leaning
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Computer-Vision/" title="Computer Vision: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Computer Vision" style="background-color: #F5EEF8;">Computer Vision
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="" title="Reinforcement learning: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Reinforcement learning" style="background-color: #D5F5E3;">Reinforcement learning
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Opencv/" title="Opencv: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Opencv" style="background-color: #E8F8F5;">Opencv
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Python/" title="Python: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Python" style="background-color: #FEF9E7;">Python
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../C/" title="C: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="C" style="background-color: #F8F9F9;">C
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Matlab/" title="Matlab: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Matlab" style="background-color: #82E0AA;">Matlab
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../selenium/" title="selenium: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="selenium" style="background-color: #D7BDE2;">selenium
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Crawler/" title="Crawler: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Crawler" style="background-color: #A3E4D7;">Crawler
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../on-campus/" title="on campus: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="on campus" style="background-color: #85C1E9;">on campus
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Gym/" title="Gym: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Gym" style="background-color: #F8C471;">Gym
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Travel/" title="Travel: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Travel" style="background-color: #F9E79F;">Travel
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../2ASK/" title="2ASK: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="2ASK" style="background-color: #82E0AA;">2ASK
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Low-high-pass-filter/" title="Low/high pass filter: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Low/high pass filter" style="background-color: #FEF9E7;">Low/high pass filter
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../C51/" title="C51: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="C51" style="background-color: #F9EBEA;">C51
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../IAP15K4W58S/" title="IAP15K4W58S: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="IAP15K4W58S" style="background-color: #F8F9F9;">IAP15K4W58S
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Analog-circuit/" title="Analog circuit: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Analog circuit" style="background-color: #82E0AA;">Analog circuit
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../Digital-circuit/" title="Digital circuit: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Digital circuit" style="background-color: #F8F9F9;">Digital circuit
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../verilog/" title="verilog: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="verilog" style="background-color: #D5F5E3;">verilog
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../multisim/" title="multisim: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="multisim" style="background-color: #D7BDE2;">multisim
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../publication/" title="publication: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="publication" style="background-color: #FEF9E7;">publication
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../honor-certificates/" title="honor certificates: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="honor certificates" style="background-color: #85C1E9;">honor certificates
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="../scholarship/" title="scholarship: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="scholarship" style="background-color: #FEF9E7;">scholarship
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Deep Leaning, Computer Vision, Reinforcement learning, Opencv, Python, C, Matlab" data-aos="fade-up">
+                <div class="card">
+                    <a href="../../2022/08/01/Artificial-intelligence/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://github.com/yangtiming/myinfo/blob/main/images/underwater.jpeg?raw=true" class="responsive-img" alt="Artificial intelligence &amp;&amp; Image processing">
+                            
+                            <span class="card-title">Artificial intelligence &amp;&amp; Image processing</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Yang Timing
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </article>
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="../../libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="../../libs/aplayer/APlayer.min.js"></script>
+<script src="../../libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <a href="../../about" target="_blank">Yang Timing</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:yangtiming_dlut@163.com" class="tooltipped" target="_blank" data-tooltip="Contact me by email:yangtiming_dlut@163.com " data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=493686273" class="tooltipped" target="_blank" data-tooltip="Contact me by QQ: 493686273" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('../../search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="../../libs/materialize/materialize.min.js"></script>
+    <script src="../../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../../libs/aos/aos.js"></script>
+    <script src="../../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../../js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="../../libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="../../libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="../../libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="../../libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
