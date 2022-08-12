@@ -60,13 +60,13 @@
       
         <tags>
             
-            <tag> selenium </tag>
-            
-            <tag> Crawler </tag>
-            
             <tag> Python </tag>
             
             <tag> C </tag>
+            
+            <tag> selenium </tag>
+            
+            <tag> Crawler </tag>
             
         </tags>
       
@@ -118,10 +118,6 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
-            <tag> C </tag>
-            
             <tag> Deep Leaning </tag>
             
             <tag> Computer Vision </tag>
@@ -129,6 +125,10 @@
             <tag> Reinforcement learning </tag>
             
             <tag> Opencv </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> C </tag>
             
             <tag> Matlab </tag>
             
